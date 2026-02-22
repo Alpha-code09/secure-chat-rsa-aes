@@ -1,63 +1,69 @@
-🔐 Secure Chat Application (RSA + AES Hybrid Encryption)
-========================================================
+
+
+
+
+# 🔐 Secure Chat Application (RSA + AES Hybrid Encryption)
 
 A production-style **End-to-End Encrypted Chat Application** built using **Hybrid Cryptography (RSA + AES-GCM)** with a modern client-server architecture.
 
 This project demonstrates practical implementation of cryptographic principles including secure key exchange, authenticated encryption, and zero-knowledge server design.
 
-🚀 Features
------------
+----------
 
-*   2048-bit RSA keypair generation (client-side)
+## 🚀 Features
+
+-   🔑 2048-bit RSA keypair generation (client-side)
     
-*   AES-256-GCM authenticated message encryption
+-   🔐 AES-256-GCM authenticated message encryption
     
-*   Hybrid cryptography (RSA for key exchange + AES for data)
+-   🔁 Hybrid cryptography (RSA for key exchange + AES for data)
     
-*   Zero-knowledge server (cannot decrypt messages)
+-   🧠 Zero-knowledge server (cannot decrypt messages)
     
-*   Modern GUI built with PyQt5
+-   💬 Modern GUI built with PyQt5
     
-*   FastAPI backend with RESTful APIs
+-   ⚡ FastAPI backend with RESTful APIs
     
-*   SQLite database (server + local history)
+-   🗄 SQLite database (server + local history)
     
-*   Integrity protection using AES-GCM authentication tag
+-   🛡 Integrity protection using AES-GCM authentication tag
     
-*   Encrypted traffic validation (Wireshark tested)
+-   📡 Encrypted traffic validation (Wireshark tested)
     
 
-🏗 Architecture
----------------
+----------
+
+## 🏗 Architecture
 
 ### Client (PyQt5)
 
-*   RSA Key Manager
+-   RSA Key Manager
     
-*   AES-GCM Encryptor/Decryptor
+-   AES-GCM Encryptor/Decryptor
     
-*   GUI Chat Interface
+-   GUI Chat Interface
     
-*   Local SQLite history database
+-   Local SQLite history database
     
-*   Private key stored locally (never transmitted)
+-   Private key stored locally (never transmitted)
     
 
 ### Server (FastAPI)
 
-*   User Registration API
+-   User Registration API
     
-*   Public Key Directory
+-   Public Key Directory
     
-*   Encrypted Message Storage
+-   Encrypted Message Storage
     
-*   SQLite database (users + messages)
+-   SQLite database (users + messages)
     
-*   Zero access to plaintext messages
+-   Zero access to plaintext messages
     
 
-🔄 Cryptographic Workflow
--------------------------
+----------
+
+## 🔄 Cryptographic Workflow
 
 ### 🔐 Sending a Message
 
@@ -71,16 +77,18 @@ This project demonstrates practical implementation of cryptographic principles i
     
 5.  Send:
     
-    *   Ciphertext
+    -   Ciphertext
         
-    *   Wrapped AES key
+    -   Wrapped AES key
         
-    *   Nonce
+    -   Nonce
         
-    *   Authentication tag
+    -   Authentication tag
         
 6.  Server stores encrypted data only
     
+
+----------
 
 ### 🔓 Receiving a Message
 
@@ -95,125 +103,200 @@ This project demonstrates practical implementation of cryptographic principles i
 5.  Display plaintext in GUI
     
 
-🛡 Security Model
------------------
+----------
+
+## 🛡 Security Model
 
 ### Protected Against:
 
-*   Network eavesdropping
+-   Network eavesdropping
     
-*   Message tampering
+-   Message tampering
     
-*   Server compromise (zero-knowledge design)
+-   Server compromise (zero-knowledge design)
     
-*   Man-in-the-middle attacks on message content
+-   Man-in-the-middle attacks on message content
     
 
 ### Not Protected Against:
 
-*   Compromised client device
+-   Compromised client device
     
-*   Private key theft
+-   Private key theft
     
-*   Endpoint attacks (keyloggers, malware)
+-   Endpoint attacks (keyloggers, malware)
     
 
-🧰 Tech Stack
--------------
+----------
 
-ComponentTechnologyBackendFastAPIFrontendPyQt5EncryptionRSA (2048-bit), AES-256-GCMDatabaseSQLiteLanguagePython 3
+## 🧰 Tech Stack
 
-📂 Project Structure
---------------------
+Component
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   secure-chat/  │  ├── client/  │   ├── gui.py  │   ├── rsa_manager.py  │   ├── aes_engine.py  │   ├── local_db.py  │  ├── server/  │   ├── main.py  │   ├── models.py  │   ├── database.py  │  ├── data.sqlite  ├── requirements.txt  └── README.md   `
+Technology
 
-⚙️ Installation & Setup
------------------------
+Backend
+
+FastAPI
+
+Frontend
+
+PyQt5
+
+Encryption
+
+RSA (2048-bit), AES-256-GCM
+
+Database
+
+SQLite
+
+Language
+
+Python 3
+
+----------
+
+## 📂 Project Structure
+
+```
+secure-chat/
+│
+├── client/
+│   ├── gui.py
+│   ├── rsa_manager.py
+│   ├── aes_engine.py
+│   ├── local_db.py
+│
+├── server/
+│   ├── main.py
+│   ├── models.py
+│   ├── database.py
+│
+├── data.sqlite
+├── requirements.txt
+└── README.md
+
+```
+
+----------
+
+## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone Repository
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/yourusername/secure-chat.git  cd secure-chat   `
+```bash
+git clone https://github.com/yourusername/secure-chat.git
+cd secure-chat
+
+```
 
 ### 2️⃣ Install Dependencies
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pip install -r requirements.txt   `
+```bash
+pip install -r requirements.txt
+
+```
 
 ### 3️⃣ Start Backend Server
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   cd backend  uvicorn server:app --reload --host 0.0.0.0 --port 8000   `
+```bash
+cd backend  
+uvicorn server:app --reload --host 0.0.0.0 --port 8000
+
+```
 
 Server runs at:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   http://127.0.0.1:8000   `
+```
+http://127.0.0.1:8000
+
+```
 
 ### 4️⃣ Run Client Application
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   cd client  python3 client_pyqt.py   `
+```bash
+cd client 
+python3 client_pyqt.py  
 
-🔍 API Documentation
---------------------
+```
+
+----------
+
+## 🔍 API Documentation
 
 FastAPI automatically generates API docs at:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   http://127.0.0.1:8000/docs   `
+```
+http://127.0.0.1:8000/docs
 
-📈 Future Improvements
-----------------------
+```
+----------
 
-*   HTTPS/TLS support
+## 📈 Future Improvements
+
+-   HTTPS/TLS support
     
-*   Encrypted file sharing
+-   Encrypted file sharing
     
-*   Group chat with secure group keys
+-   Group chat with secure group keys
     
-*   Multi-device synchronization
+-   Multi-device synchronization
     
-*   PostgreSQL migration
+-   PostgreSQL migration
     
-*   Mobile application version
+-   Mobile application version
     
 
-🎓 Learning Outcomes
---------------------
+----------
+
+## 🎓 Learning Outcomes
 
 This project demonstrates:
 
-*   Practical hybrid cryptography implementation
+-   Practical hybrid cryptography implementation
     
-*   Secure key management
+-   Secure key management
     
-*   Zero-knowledge architecture design
+-   Zero-knowledge architecture design
     
-*   Authenticated encryption (AES-GCM)
+-   Authenticated encryption (AES-GCM)
     
-*   RESTful API development
+-   RESTful API development
     
-*   Secure client-server communication design
-    
-
-📜 References
--------------
-
-*   RSA (Rivest, Shamir, Adleman – 1978)
-    
-*   NIST AES Standard (FIPS-197)
-    
-*   RSA-OAEP
-    
-*   AES-GCM
-    
-*   TLS 1.3 Specification
+-   Secure client-server communication design
     
 
-👨‍💻 Authors
--------------
+----------
 
-*   Aditya Rana
+## 📜 References
+
+-   RSA (Rivest, Shamir, Adleman – 1978)
     
-*   Daksh Sharma
+-   NIST AES Standard (FIPS-197)
     
-*   Prateek
+-   RSA-OAEP
+    
+-   AES-GCM
+    
+-   TLS 1.3 Specification
     
 
-Information Security LabB.Tech CSE – Jaypee Institute of Information Technology
+----------
+
+## 👨‍💻 Authors
+
+-   Aditya Rana
+    
+-   Daksh Sharma
+    
+-   Prateek
+    
+
+Information Security Lab  
+B.Tech CSE – Jaypee Institute of Information Technology
+
+----------
+
+----------
+
